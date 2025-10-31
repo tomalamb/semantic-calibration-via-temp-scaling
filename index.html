@@ -366,6 +366,83 @@
 </section>
 <!-- End paper abstract -->
 
+<!-- Methodology Section -->
+<section class="section hero is-white">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methodology</h2>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate our approach across multiple question-answering datasets, including TriviaQA, Natural Questions, and SQuAD, using popular instruction-tuned language models. To study how token-level calibration affects semantic calibration, we test several post-hoc recalibration techniques: a single scalar <strong>Temperature Scaling (TS)</strong>, an <strong>Adaptive Temperature Scaling (ATS)</strong> head that predicts token-specific temperatures, <strong>Platt Scaling</strong> with a diagonal affine logit transform, and fixed-temperature baselines of τ = 1.0 (Base) and τ = 0.5 (SE). We compare how each method influences semantic calibration, discrimination, and uncertainty across semantic confidence measures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Results Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            We report results across models and datasets, focusing on how different token-level
+            recalibration techniques impact semantic calibration and discrimination. Optimised
+            <strong>Temperature Scaling (TS)</strong> consistently improves semantic uncertainty
+            quantification, outperforming both fixed-temperature heuristics and more complex
+            calibration methods such as <strong>ATS</strong> and <strong>Platt Scaling</strong>.
+            Improvements hold across question-answering datasets, demonstrating the robustness of
+            temperature-based semantic recalibration.
+          </p>
+        </div>
+
+        <!-- First results figure -->
+        <div class="box">
+          <figure class="image">
+            <img src="static/images/calibration_scatter_best.png" alt="Results figure 1: Semantic calibration and discrimination metrics">
+          </figure>
+          <p class="is-size-6 has-text-grey mt-3">
+            <p class="is-size-6 has-text-grey mt-3"><em>Figure:</em> <strong>Uncertainty Metrics of SC Measures Across Methods.</strong> Mean and standard error of \( \widehat{\mathrm{ACE}} \) (\( \downarrow \)) and AUROC (\( \uparrow \)) scores for SC measures across baseline, calibration methods, and datasets. <em>Closer to the top-left of plots indicates better discrimination and calibration, and hence better overall semantic uncertainty quantification.</em></p>
+          </p>
+        </div>
+
+        <!-- Second results figure -->
+        <div class="box">
+          <figure class="image">
+            <img src="static/images/se_comparison.png" alt="Results figure 2: Uncertainty measures and semantic entropy comparison">
+          </figure>
+          <p class="is-size-6 has-text-grey mt-3">
+            <p class="is-size-6 has-text-grey mt-3"><em>Figure:</em> <strong>Discrimination Comparison of Entropy for Qwen.</strong> Mean and standard error of AUROC (\( \uparrow \)) values. (a) reports \( \mathrm{SE}_{\mathrm{conf}} \), where correctness is determined by the most confident semantic cluster under a given SC measure. (b) reports \( \mathrm{SE}_{\mathrm{vanilla}} \) from <a href="#ref-kuhn2023semantic">Kuhn&nbsp;et&nbsp;al.&nbsp;(2023)</a>, where correctness is determined via greedy decoding. Bold entries denote the best result within each SC measure per dataset, and <u>underlined</u> entries indicate the best overall per dataset.</p>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Takeaways -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="box has-background-light">
+      <h2 class="title is-4 has-text-centered">Key Takeaways</h2>
+      <ul style="text-align:left;">
+        <li><strong>Temperature scaling (TS)</strong> is a simple yet highly effective method for improving semantic uncertainty quantification in language models.</li>
+        <li>Optimising a single scalar temperature parameter substantially enhances both <strong>semantic calibration</strong> and <strong>discrimination</strong> across QA datasets.</li>
+        <li>TS consistently outperforms more complex methods such as <strong>Adaptive Temperature Scaling (ATS)</strong> and <strong>Platt Scaling</strong>.</li>
+        <li>Fixed-temperature baselines (τ = 1.0 and τ = 0.5) used in prior work are suboptimal for semantic calibration.</li>
+        <li>Better calibrated semantic confidence measures lead to more reliable downstream uncertainty metrics such as semantic entropy.</li>
+        <li>Overall, token-level temperature optimisation provides a <strong>simple, robust, and computationally efficient</strong> approach for improving the reliability of language models.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 
 
 
