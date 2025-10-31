@@ -241,23 +241,28 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling</h1>
             <div class="is-size-5 publication-authors">
               <!-- TODO: Replace with your paper authors and their personal links -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://tomalamb.github.io/" target="_blank">Tom A. Lamb</a><sup>1</sup></span>,
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://desirivanova.com/" target="_blank">Desi Ivanova</a><sup>1</sup></span>,
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://www.robots.ox.ac.uk/~phst/" target="_blank">Philip H.S. Torr</a><sup>1</sup></span>,
+                      <span class="author-block">
+                         <a href="https://timrudner.com/" target="_blank">Tim G. J. Rudner</a><sup>2</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">Institution Name<br>Conference name and year</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">
+                      <sup>1</sup>University of Oxford&nbsp;&nbsp;&nbsp;
+                      <sup>2</sup>University of Toronto
+                    </span>
+                    <span class="eql-cntrb">
+                      <small><br><sup>*</sup>Indicates Equal Contribution</small>
+                    </span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -272,17 +277,6 @@
                         <span>Paper</span>
                       </a>
                     </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <span class="link-block">
@@ -314,23 +308,25 @@
 </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
+<!-- Motivation section -->
+<section class="section hero is-white">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation</h2>
+        <figure class="image">
+          <!-- If you have converted the PDF to an image, use that -->
+          <img src="static/images/motivation_single.png" alt="Motivation figure">
+        </figure>
+        <!-- Optional caption -->
+        <p>
+          <strong>Temperature Scaling Improves Semantic Uncertainty Quantification.</strong> We compare two models with different temperatures, each generating ten responses for the same input, and cluster responses into semantic groups. We compute the semantic confidence measure introdcued by <a href="#ref-kuhn2023semantic">Kuhn et&nbsp;al.&nbsp;(2023)</a>. Panel <strong>(a)</strong> uses the recommended temperature of 0.5. Panel <strong>(b)</strong> uses a temperature optimized on a calibration set. Temperature scaling offers a simple way to improve both semantic calibration and discrimination.
+        </p>
+      </div>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- End motivation section -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -341,7 +337,7 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Calibration is central to reliable semantic uncertainty quantification in language models, yet prior work has largely focused on the discriminative use of semantic uncertainty, neglecting calibration. In this paper, we address this gap in the literature and study both semantic calibration and discrimination across a broad set of semantic confidence measures. We conduct a careful empirical evaluation and find that optimising a single, token-level temperature parameter is a simple and effective method for improving semantic uncertainty quantification. Across semantic confidence measures, models, and QA datasets, token-level temperature optimisation consistently improves semantic calibration, discrimination, and semantic entropy. Notably, uncertainty-focused temperature optimisation outperforms both widely-used fixed-temperature baselines and more sophisticated calibration methods for semantic uncertainty quantification.
           </p>
         </div>
       </div>
@@ -350,123 +346,27 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Semantic Confidence Measures</h2>
+          <figure class="image">
+          <!-- If you have converted the PDF to an image, use that -->
+          <img src="static/images/methodology.pdf" alt="Motivation figure">
+        </figure>
+        <div class="content has-text-justified">
+          <!-- TODO: Replace with your paper abstract -->
+          <p class="is-size-6 has-text-grey mt-3"><em>Figure:</em> Figure showing how existing <a href="#ref-farquhar2024detecting">E-SC&nbsp;(Farquhar&nbsp;et&nbsp;al., 2024)</a> and <a href="#ref-kuhn2023semantic">L-SC&nbsp;(Kuhn&nbsp;et&nbsp;al., 2023)</a>, as well as a broad set of novel baseline semantic measures (ML-SC, B-SC, T-SC, IC-SC, and G-SC), are computed. For an input \( \mathbf{x} \), we sample multiple responses from the model \( p(\cdot \mid \mathbf{x}) \), and use an NLI model to assess bidirectional entailment, determining whether responses \( \mathbf{y}^{i} \) and \( \mathbf{y}^{j} \) are semantically equivalent (\( \mathbf{y}^{i} \sim \mathbf{y}^{j} \mid \mathbf{x} \)). Here, \( s(C \mid \mathbf{x}) \) denotes the sum, \( \bar{s}(C \mid \mathbf{x}) \) the average, \( \mathcal{H}(p_{C_i}) \) the entropy, and \( \mathcal{E}(C_i \mid \mathbf{x}) \) the entropy of the length-normalised log-likelihoods of generations within cluster \( C \). See <a href="#sec-confidence-measures">Section&nbsp;Confidence&nbsp;Measures</a> for further details.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
+<!-- End paper abstract -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 
@@ -480,12 +380,12 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+      <pre id="bibtex-code"><code>@article{lamb2025,
+  title={Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling},
+  author={Lamb, T.A. and Ivanova, Desi and Torr, Philip H.S. and Rudner, Tim G.J.},
+  journal={arXiv preprint},
+  year={2025},
+  archivePrefix={arXiv},
 }</code></pre>
     </div>
 </section>
