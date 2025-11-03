@@ -749,5 +749,20 @@ a:focus {
   }
 }
 
+/* === Custom Page Width Adjustment === */
+#main-content .container.is-max-desktop {
+  max-width: 1200px;  /* Increase from ~960px default */
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+@media (min-width: 1600px) {
+  #main-content .container.is-max-desktop {
+    max-width: 1400px;  /* Optional wider layout for large screens */
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
 
 
