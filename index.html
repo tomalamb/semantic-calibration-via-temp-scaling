@@ -283,7 +283,7 @@
       <h2 class="title is-4 has-text-centered">Key research question</h2>
       <div class="content">
         <p class="is-size-5 has-text-centered">
-          How does optimising a single token-level temperature parameter affect the semantic calibration and discrimination of semantic confidence measures, and the discriminability of derived quantities such as semantic entropy derived from these confidence measures?
+          How does optimising a single token-level temperature parameter affect the semantic calibration and discrimination of semantic confidence measures, and the discriminability of quantities such as semantic entropy derived from these confidence measures?
         </p>
       </div>
     </div>
@@ -336,7 +336,7 @@
         <h2 class="title is-3">Methodology</h2>
         <div class="content has-text-justified">
           <p>
-            We evaluate the calibration and discrimination of semantic confidence measures across multiple question-answering datasets, including TriviaQA, Natural Questions, and SQuAD, using popular instruction-tuned language models. To study how token-level calibration affects semantic calibration, we test several post-hoc recalibration techniques: a single scalar <strong>Temperature Scaling (TS)</strong>, an <strong>Adaptive Temperature Scaling (ATS)</strong> head that predicts token-specific temperatures, <strong>Platt Scaling</strong> with a diagonal affine logit transform, and fixed-temperature baselines of τ = 1.0 (Base) and τ = 0.5 (SE). We compare how each method influences semantic calibration, discrimination, and uncertainty across semantic confidence measures.
+            We evaluate the calibration and discrimination of semantic confidence measures across multiple question-answering datasets, including TriviaQA, Natural Questions, and SQuAD, using popular instruction-tuned language models. To investigate the affect of optimisng temperature paramters (Temperature Scaling (TS)) on semantic uncertainty quantification, we and compare against several baseline post-hoc, token-level recalibration techniques: an <strong>Adaptive Temperature Scaling (ATS)</strong> head that predicts token-specific temperatures, <strong>Platt Scaling</strong> with a diagonal affine logit transform, and fixed-temperature baselines of τ = 1.0 (Base) and τ = 0.5 (SE). We compare how each method influences semantic calibration, discrimination, and uncertainty across semantic confidence measures.
           </p>
         </div>
       </div>
@@ -353,7 +353,7 @@
 
         <div class="content has-text-justified">
           <p>
-            We report results across models and datasets, focusing on how different token-level
+            We report results across models (7-8B Llama, Qwen and Mistral models) and question-answering datasets (closed book: TriviaQA and Natural Questions; open book: SQuAD), focusing on how different token-level
             recalibration techniques impact semantic calibration and discrimination.
           </p>
         </div>
@@ -363,7 +363,7 @@
         <div class="content has-text-justified">
           <p>
             Optimised <strong>Temperature Scaling (TS)</strong> consistently improves semantic uncertainty
-            quantification, outperforming both fixed-temperature heuristics and more complex calibration
+            quantification, outperforming both fixed-temperature heuristics (Base and SE) used in prior work,  and more complex calibration
             methods such as <strong>Adaptive Temperature Scaling (ATS)</strong> and <strong>Platt Scaling</strong>.
             Improvements hold across all question-answering datasets, demonstrating that TS provides a simple,
             robust, and effective means of enhancing both semantic calibration and discrimination of semantic
@@ -382,7 +382,7 @@
         </div>
 
         <!-- Subsection 2 -->
-        <h3 class="title is-4 has-text-left mt-6">Temperature Scaling Also Discriminability of the Semantic Entropy Derived from Semantic Confidence Measures</h3>
+        <h3 class="title is-4 has-text-left mt-6">Temperature Scaling Improves Discriminability of the Semantic Entropy Derived from Semantic Confidence Measures</h3>
         <div class="content has-text-justified">
           <p>
             Building on the calibration and discrimination results above, we next evaluate how
@@ -392,7 +392,7 @@
             <strong>SE<sub>vanilla</sub></strong> that determines correctness via greedy decoding while
             sampling from a temperature-smoothed distribution. Across datasets, optimised temperature
             scaling (<strong>TS</strong>) consistently improves the discriminative power of entropy under
-            both definitions, surpassing fixed-temperature heuristics (τ ∈ {0.5, 1.0}) and demonstrating
+            both definitions, surpassing fixed-temperature heuristics (Base and SE with τ ∈ {0.5, 1.0}) and demonstrating
             that aligning prediction and uncertainty distributions yields more reliable semantic
             uncertainty estimates.
           </p>
