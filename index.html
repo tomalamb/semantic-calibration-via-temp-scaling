@@ -295,6 +295,19 @@
 </section>
 <!-- End paper abstract -->
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="box has-background-light">
+      <h2 class="title is-4 has-text-centered">Key research question</h2>
+      <div class="content">
+        <p class="is-size-5 has-text-centered">
+          How does optimising a single token-level temperature parameter affect the <strong>semantic calibration</strong> and <strong>discrimination</strong> of semantic confidence measures?
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -359,6 +372,10 @@
             <p class="is-size-6 has-text-grey mt-3"><em>Figure:</em> <strong>Uncertainty Metrics of SC Measures Across Methods.</strong> Mean and standard error of \( \widehat{\mathrm{ACE}} \) (\( \downarrow \)) and AUROC (\( \uparrow \)) scores for SC measures across baseline, calibration methods, and datasets. <em>Closer to the top-left of plots indicates better discrimination and calibration, and hence better overall semantic uncertainty quantification.</em></p>
           </p>
         </div>
+
+        <p class="is-size-6 has-text-justified mt-5 mb-5">
+        Building on the calibration and discrimination results above, we next evaluate how token-level temperature optimisation affects downstream <strong>semantic entropy (SE)</strong>. We compare a principled formulation, <strong>SE<sub>conf</sub></strong>, where the final answer is drawn from the most confident semantic cluster, against the heuristic baseline <strong>SE<sub>vanilla</sub></strong> that determines correctness via greedy decoding while sampling from a temperature-smoothed distribution. Across datasets, optimised temperature scaling (<strong>TS</strong>) consistently improves the discriminative power of entropy under both definitions, surpassing fixed-temperature heuristics (τ ∈ {0.5, 1.0}) and demonstrating that aligning prediction and uncertainty distributions yields more robust semantic uncertainty estimates. 
+        </p>
 
         <!-- Second results figure -->
         <div class="box">
