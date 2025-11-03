@@ -49,7 +49,7 @@
   <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Same as social preview image above -->
   <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling - Research Preview">
+  <meta name="twitter:image:alt" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling">
 
   <!-- Academic/Research Specific -->
   <meta name="citation_title" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling">
@@ -114,7 +114,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "PAPER_TITLE",
+    "headline": "Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling",
     "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
     "author": [
       {
@@ -269,7 +269,7 @@
         </figure>
         <!-- Optional caption -->
         <p>
-          <strong>Temperature Scaling Improves Semantic Uncertainty Quantification.</strong> We compare two models with different temperatures, each generating ten responses for the same input, and cluster responses into semantic groups. We compute the semantic confidence measure introdcued by <a href="#ref-kuhn2023semantic">Kuhn et&nbsp;al.&nbsp;(2023)</a>. Panel <strong>(a)</strong> uses the recommended temperature of 0.5. Panel <strong>(b)</strong> uses a temperature optimized on a calibration set. Temperature scaling offers a simple way to improve both semantic calibration and discrimination.
+          <strong>Temperature Scaling Improves Semantic Uncertainty Quantification.</strong> We compare the same base model with different temperature parameters, each generating ten responses for the same input, and cluster responses into semantic groups. We compute the semantic confidence measure introdcued by <a href="#ref-kuhn2023semantic">Kuhn et&nbsp;al.&nbsp;(2023)</a>. Panel <strong>(a)</strong> uses the recommended temperature of 0.5. Panel <strong>(b)</strong> uses a temperature optimized on a calibration set. Optimised temperature scaling offers a simple way to improve both semantic calibration and discrimination.
         </p>
       </div>
     </div>
@@ -323,7 +323,7 @@
         <h2 class="title is-3">Methodology</h2>
         <div class="content has-text-justified">
           <p>
-            We evaluate our approach across multiple question-answering datasets, including TriviaQA, Natural Questions, and SQuAD, using popular instruction-tuned language models. To study how token-level calibration affects semantic calibration, we test several post-hoc recalibration techniques: a single scalar <strong>Temperature Scaling (TS)</strong>, an <strong>Adaptive Temperature Scaling (ATS)</strong> head that predicts token-specific temperatures, <strong>Platt Scaling</strong> with a diagonal affine logit transform, and fixed-temperature baselines of τ = 1.0 (Base) and τ = 0.5 (SE). We compare how each method influences semantic calibration, discrimination, and uncertainty across semantic confidence measures.
+            We evaluate the calibration and discrimination of semantic confidence measures across multiple question-answering datasets, including TriviaQA, Natural Questions, and SQuAD, using popular instruction-tuned language models. To study how token-level calibration affects semantic calibration, we test several post-hoc recalibration techniques: a single scalar <strong>Temperature Scaling (TS)</strong>, an <strong>Adaptive Temperature Scaling (ATS)</strong> head that predicts token-specific temperatures, <strong>Platt Scaling</strong> with a diagonal affine logit transform, and fixed-temperature baselines of τ = 1.0 (Base) and τ = 0.5 (SE). We compare how each method influences semantic calibration, discrimination, and uncertainty across semantic confidence measures.
           </p>
         </div>
       </div>
