@@ -277,6 +277,19 @@
 </section>
 <!-- End motivation section -->
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="box has-background-light">
+      <h2 class="title is-4 has-text-centered">Key research question</h2>
+      <div class="content">
+        <p class="is-size-5 has-text-centered">
+          How does optimising a single token-level temperature parameter affect the semantic calibration and discrimination of semantic confidence measures, and the discriminability of derived quantities such as semantic entropy derived from these confidence measures?
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -294,19 +307,6 @@
   </div>
 </section>
 <!-- End paper abstract -->
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="box has-background-light">
-      <h2 class="title is-4 has-text-centered">Key research question</h2>
-      <div class="content">
-        <p class="is-size-5 has-text-centered">
-          How does optimising a single token-level temperature parameter affect the <strong>semantic calibration</strong> and <strong>discrimination</strong> of semantic confidence measures?
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -354,12 +354,20 @@
         <div class="content has-text-justified">
           <p>
             We report results across models and datasets, focusing on how different token-level
-            recalibration techniques impact semantic calibration and discrimination. Optimised
-            <strong>Temperature Scaling (TS)</strong> consistently improves semantic uncertainty
-            quantification, outperforming both fixed-temperature heuristics and more complex
-            calibration methods such as <strong>ATS</strong> and <strong>Platt Scaling</strong>.
-            Improvements hold across question-answering datasets, demonstrating the robustness of
-            temperature-based semantic recalibration.
+            recalibration techniques impact semantic calibration and discrimination.
+          </p>
+        </div>
+
+        <!-- Subsection 1 -->
+        <h3 class="title is-4 has-text-left mt-5">Temperature Scaling Improves Semantic Calibration and Discrimination</h3>
+        <div class="content has-text-justified">
+          <p>
+            Optimised <strong>Temperature Scaling (TS)</strong> consistently improves semantic uncertainty
+            quantification, outperforming both fixed-temperature heuristics and more complex calibration
+            methods such as <strong>Adaptive Temperature Scaling (ATS)</strong> and <strong>Platt Scaling</strong>.
+            Improvements hold across all question-answering datasets, demonstrating that TS provides a simple,
+            robust, and effective means of enhancing both semantic calibration and discrimination of semantic
+            confidence measures.
           </p>
         </div>
 
@@ -369,13 +377,26 @@
             <img src="static/images/calibration_scatter_best.png" alt="Results figure 1: Semantic calibration and discrimination metrics">
           </figure>
           <p class="is-size-6 has-text-grey mt-3">
-            <p class="is-size-6 has-text-grey mt-3"><em>Figure:</em> <strong>Uncertainty Metrics of SC Measures Across Methods.</strong> Mean and standard error of \( \widehat{\mathrm{ACE}} \) (\( \downarrow \)) and AUROC (\( \uparrow \)) scores for SC measures across baseline, calibration methods, and datasets. <em>Closer to the top-left of plots indicates better discrimination and calibration, and hence better overall semantic uncertainty quantification.</em></p>
+            <em>Figure:</em> <strong>Uncertainty Metrics of SC Measures Across Methods.</strong> Mean and standard error of \( \widehat{\mathrm{ACE}} \) (\( \downarrow \)) and AUROC (\( \uparrow \)) scores for SC measures across baseline, calibration methods, and datasets. <em>Closer to the top-left of plots indicates better discrimination and calibration, and hence better overall semantic uncertainty quantification.</em>
           </p>
         </div>
 
-        <p class="is-size-6 has-text-justified mt-5 mb-5">
-        Building on the calibration and discrimination results above, we next evaluate how token-level temperature optimisation affects downstream <strong>semantic entropy (SE)</strong>. We compare a principled formulation, <strong>SE<sub>conf</sub></strong>, where the final answer is drawn from the most confident semantic cluster, against the heuristic baseline <strong>SE<sub>vanilla</sub></strong> that determines correctness via greedy decoding while sampling from a temperature-smoothed distribution. Across datasets, optimised temperature scaling (<strong>TS</strong>) consistently improves the discriminative power of entropy under both definitions, surpassing fixed-temperature heuristics (τ ∈ {0.5, 1.0}) and demonstrating that aligning prediction and uncertainty distributions yields more robust semantic uncertainty estimates. 
-        </p>
+        <!-- Subsection 2 -->
+        <h3 class="title is-4 has-text-left mt-6">Temperature Scaling Also Discriminability of the Semantic Entropy Derived from Semantic Confidence Measures</h3>
+        <div class="content has-text-justified">
+          <p>
+            Building on the calibration and discrimination results above, we next evaluate how
+            token-level temperature optimisation affects downstream <strong>semantic entropy (SE)</strong>.
+            We compare a principled formulation, <strong>SE<sub>conf</sub></strong>, where the final answer
+            is drawn from the most confident semantic cluster, against the heuristic baseline
+            <strong>SE<sub>vanilla</sub></strong> that determines correctness via greedy decoding while
+            sampling from a temperature-smoothed distribution. Across datasets, optimised temperature
+            scaling (<strong>TS</strong>) consistently improves the discriminative power of entropy under
+            both definitions, surpassing fixed-temperature heuristics (τ ∈ {0.5, 1.0}) and demonstrating
+            that aligning prediction and uncertainty distributions yields more reliable semantic
+            uncertainty estimates.
+          </p>
+        </div>
 
         <!-- Second results figure -->
         <div class="box">
@@ -383,7 +404,7 @@
             <img src="static/images/se_comparison.png" alt="Results figure 2: Uncertainty measures and semantic entropy comparison">
           </figure>
           <p class="is-size-6 has-text-grey mt-3">
-            <p class="is-size-6 has-text-grey mt-3"><em>Figure:</em> <strong>Discrimination Comparison of Entropy for Qwen.</strong> Mean and standard error of AUROC (\( \uparrow \)) values. (a) reports \( \mathrm{SE}_{\mathrm{conf}} \), where correctness is determined by the most confident semantic cluster under a given SC measure. (b) reports \( \mathrm{SE}_{\mathrm{vanilla}} \) from <a href="#ref-kuhn2023semantic">Kuhn&nbsp;et&nbsp;al.&nbsp;(2023)</a>, where correctness is determined via greedy decoding. Bold entries denote the best result within each SC measure per dataset, and <u>underlined</u> entries indicate the best overall per dataset.</p>
+            <em>Figure:</em> <strong>Discrimination Comparison of Entropy for Qwen.</strong> Mean and standard error of AUROC (\( \uparrow \)) values. (a) reports \( \mathrm{SE}_{\mathrm{conf}} \), where correctness is determined by the most confident semantic cluster under a given SC measure. (b) reports \( \mathrm{SE}_{\mathrm{vanilla}} \) from <a href="#ref-kuhn2023semantic">Kuhn&nbsp;et&nbsp;al.&nbsp;(2023)</a>, where correctness is determined via greedy decoding. Bold entries denote the best result within each SC measure per dataset, and <u>underlined</u> entries indicate the best overall per dataset.
           </p>
         </div>
 
