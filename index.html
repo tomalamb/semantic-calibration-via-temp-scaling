@@ -6,13 +6,13 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling - Tom A. Lamb, Desi Ivanova, Philip H.S. Torr, and Tim G.J. Rudner">
+  <meta name="title" content="Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling - Tom A. Lamb, Desi Ivanova, Philip H.S. Torr, and Tim G.J. Rudner">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
   <meta name="description" content="This paper introduces new semantic confidence measures and shows that simple token-level temperature optimisation improves calibration, discrimination, and entropy-based uncertainty in LLMs, outperforming heuristic and complex calibration methods.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
   <meta name="keywords" content="Semantic Calibration, LLMs, NLP, Uncertainty Quantificaiton, Semantic Entropy">
   <!-- TODO: List all authors -->
-  <meta name="author" content="Tom A. Lamb, Desi Ivanova, Philip H.S. Torr, Tim G.J. Rudner">
+  <meta name="author" content="Tom A. Lamb, Desi Ivanova, Philip H. S. Torr, Tim G. J. Rudner">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
@@ -21,7 +21,7 @@
   <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling">
+  <meta property="og:title" content="Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling">
   <!-- TODO: Same as description above -->
   <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Replace with your actual website URL -->
@@ -30,7 +30,7 @@
   <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling - Research Preview">
+  <meta property="og:image:alt" content="Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling - Research Preview">
   <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
   <meta property="article:author" content="FIRST_AUTHOR_NAME">
   <meta property="article:section" content="Research">
@@ -44,15 +44,15 @@
   <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling">
+  <meta name="twitter:title" content="Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling">
   <!-- TODO: Same as description above -->
   <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Same as social preview image above -->
   <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling">
+  <meta name="twitter:image:alt" content="Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling">
+  <meta name="citation_title" content="Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling">
   <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
   <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
   <meta name="citation_publication_date" content="2024">
@@ -199,9 +199,9 @@
               <span class="author-block">
                 <a href="https://tomalamb.github.io/" target="_blank">Tom A. Lamb</a><sup>1</sup></span>,
                 <span class="author-block">
-                  <a href="https://desirivanova.com/" target="_blank">Desi Ivanova</a><sup>1</sup></span>,
+                  <a href="https://desirivanova.com/" target="_blank">Desi R. Ivanova</a><sup>1</sup></span>,
                   <span class="author-block">
-                    <a href="https://www.robots.ox.ac.uk/~phst/" target="_blank">Philip H.S. Torr</a><sup>1</sup></span>,
+                    <a href="https://www.robots.ox.ac.uk/~phst/" target="_blank">Philip H. S. Torr</a><sup>1</sup></span>,
                       <span class="author-block">
                          <a href="https://timrudner.com/" target="_blank">Tim G. J. Rudner</a><sup>2</sup>
                   </span>
@@ -210,7 +210,7 @@
                   <div class="is-size-5 publication-authors">
                     <span class="author-block">
                       <sup>1</sup>University of Oxford&nbsp;&nbsp;&nbsp;
-                      <sup>2</sup>University of Toronto
+                      <sup>2</sup>University of Toronto & Vijil
                     </span>
                   </div>
 
@@ -299,7 +299,7 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Calibration is central to reliable semantic uncertainty quantification in language models, yet prior work has largely focused on the discriminative use of semantic uncertainty, neglecting calibration. In this paper, we address this gap in the literature and study both semantic calibration and discrimination across a broad set of semantic confidence measures. We conduct a careful empirical evaluation and find that optimising a single, token-level temperature parameter is a simple and effective method for improving semantic uncertainty quantification. Across semantic confidence measures, models, and QA datasets, token-level temperature optimisation consistently improves semantic calibration, discrimination, and semantic entropy. Notably, uncertainty-focused temperature optimisation outperforms both widely-used fixed-temperature baselines and more sophisticated calibration methods for semantic uncertainty quantification.
+            Calibration is central to reliable semantic uncertainty quantification, yet prior work has largely focused on discrimination, neglecting calibration. As calibration and discrimination capture distinct aspects of uncertainty, focusing on discrimination alone yields an incomplete picture. We address this gap by systematically evaluating both aspects across a broad set of confidence measures. We show that current approaches, particularly fixed-temperature heuristics, produce systematically miscalibrated and poorly discriminative semantic confidence distributions. We demonstrate that optimising a single scalar temperature, which, we argue, provides a suitable inductive bias, is a surprisingly simple yet effective solution. Our exhaustive evaluation confirms that temperature scaling consistently improves semantic calibration, discrimination, and downstream entropy, outperforming both heuristic baselines and more expressive token-level recalibration methods on question-answering tasks.
           </p>
         </div>
       </div>
@@ -447,7 +447,7 @@
         </button>
       </div>
       <pre id="bibtex-code"><code>@article{lamb2025,
-  title={Improving Semantic Uncertainty Quantification in Language Models via Token-Level Temperature Scaling},
+  title={Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling},
   author={Lamb, T.A. and Ivanova, Desi and Torr, Philip H.S. and Rudner, Tim G.J.},
   journal={arXiv preprint},
   year={2025},
