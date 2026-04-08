@@ -264,7 +264,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Motivation</h2>
         <figure class="image">
-          <img src="static/images/pullfigure.png" alt="Motivation figure" style="width: 70%; margin-left: auto; margin-right: auto;">
+          <img src="static/images/pullfigure.png" alt="Motivation figure" style="width: 60%; margin-left: auto; margin-right: auto;">
         </figure>
         <p>
           <strong>Temperature Scaling Improves Semantic Uncertainty Quantification.</strong> We compare the same base model with different temperature parameters, each generating ten responses for the same input, and cluster responses into semantic groups. We compute the semantic confidence measure introduced by <a href="#ref-kuhn2023semantic">Kuhn et&nbsp;al.&nbsp;(2023)</a>. Panel <strong>(a)</strong> uses the recommended temperature of 0.5. Panel <strong>(b)</strong> uses a temperature optimised on a calibration set. Optimised temperature scaling offers a simple way to improve both semantic calibration and discrimination.
@@ -274,19 +274,6 @@
   </div>
 </section>
 <!-- End motivation section -->
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="box has-background-light">
-      <h2 class="title is-4 has-text-centered">Key research question</h2>
-      <div class="content">
-        <p class="is-size-5 has-text-centered">
-          How does optimising a single token-level temperature parameter affect the semantic calibration and discrimination of semantic confidence measures, and the discriminability of quantities such as semantic entropy derived from these confidence measures?
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -444,8 +431,7 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@inproceedings{
-lamb2026improving,
+      <pre id="bibtex-code"><code>@inproceedings{lamb2026improving,
 title={Improving Semantic Uncertainty Quantification in Language Model Question-Answering via Token-Level Temperature Scaling},
 author={Tom A. Lamb and Desi R. Ivanova and Philip Torr and Tim G. J. Rudner},
 booktitle={The 29th International Conference on Artificial Intelligence and Statistics},
